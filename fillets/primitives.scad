@@ -11,7 +11,7 @@ module mcad_fillet_primitive (angle, radius)
 {
     half_angle = 0.5 * angle;
     chord_corner_dist = radius * cos(half_angle) / tan(half_angle);
-    chord_centre_dist = radius * sin(half_anglew);
+    chord_centre_dist = radius * sin(half_angle);
 
     corner_centre_dist = chord_centre_dist + chord_corner_dist;
 
@@ -29,7 +29,7 @@ module mcad_fillet_primitive (angle, radius)
         );
 
         translate ([corner_centre_dist * cos(half_angle),
-                    corner_centre_dist * sin(half_angle)])
+                     corner_centre_dist * sin(half_angle)])
             circle (r = radius);
     }
 }
