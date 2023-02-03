@@ -420,7 +420,7 @@ module gear (
 				outer_radius = outer_radius,
 				half_thick_angle = half_thick_angle,
 				involute_facets=involute_facets);
-		}n
+		}
 
 		module rounding_circles ()
 		{
