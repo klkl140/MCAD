@@ -54,12 +54,12 @@ module box(width, height, depth) {
 // Copyright: 2010
 // License: 2-clause BSD License (http://opensource.org/licenses/BSD-2-Clause)
 
-// mcad_rounded_box([width, height, depth], float radius, bool/vector sidesonly);
+// mcad_rounded_cube([width, height, depth], float radius, bool/vector sidesonly);
 
 // EXAMPLE USAGE:
-// mcad_rounded_box([20, 30, 40], 5, true);
-// mcad_rounded_box(20, 5, true);
-// mcad_rounded_box([20, 30, 40], 5, [0, 1, 0]); // centers on Y axis only
+// mcad_rounded_cube([20, 30, 40], 5, true);
+// mcad_rounded_cube(20, 5, true);
+// mcad_rounded_cube([20, 30, 40], 5, [0, 1, 0]); // centers on Y axis only
 
 // size is a vector [w, h, d]
 module mcad_rounded_cube (size, radius, sidesonly, center=false)
@@ -137,10 +137,10 @@ module egg(width, length){
 
 
 /*
-This script generates a teardrop shape at the appropriate angle 
-to prevent overhangs greater than 45 degrees. The angle is in degrees, 
-and is a rotation around the Y axis. You can then rotate around Z 
-to point it in any direction. Rotation around X or Y will cause the angle to 
+This script generates a teardrop shape at the appropriate angle
+to prevent overhangs greater than 45 degrees. The angle is in degrees,
+and is a rotation around the Y axis. You can then rotate around Z
+to point it in any direction. Rotation around X or Y will cause the angle to
 be wrong.
 */
 
@@ -154,7 +154,7 @@ module teardrop(radius, length, angle) {
 
 //I worked this portion out when a bug was causing the projection
 //above to take FOREVER to calculate. It works as a replacement,
-//and I figured I'd leave it here just in case. 
+//and I figured I'd leave it here just in case.
 /*
 		#polygon(points = [[radius * cos(-angle / 2), radius * sin(-angle / 2), 0],[radius * cos(-angle / 2), radius * -sin(-angle / 2), 0],[(sin(-angle - 45) + cos(-angle - 45)) * radius, 0, 0]], paths = [[0, 1, 2]]);
 		#polygon(points = [[radius * -cos(-angle / 2), radius * sin(-angle / 2), 0],[radius * -cos(-angle / 2), radius * -sin(-angle / 2), 0],[(sin(-angle - 45) + cos(-angle - 45)) * radius, 0, 0]], paths = [[0, 1, 2]]);
@@ -365,7 +365,7 @@ module dislocateBox(w, h, d) {
 // Copyright 2011 Elmo Mäntynen
 // LGPL 2.1
 
-// Give a list of 4+4 points (check order) to form an 8 point polyhedron 
+// Give a list of 4+4 points (check order) to form an 8 point polyhedron
 module connect_squares(points){
     polyhedron(points=points,
                triangles=[[0,1,2], [3,0,2], [7,6,5], [7,5,4], // Given polygons
