@@ -11,7 +11,7 @@
 
 // 3D Shapes
 //box(width, height, depth);
-//mcad_rounded_box (size, radius, sidesonly, center=false);
+//mcad_rounded_cube (size, radius, sidesonly, center=false);
 //ccube (size, center = false);
 
 //cone(height, radius);
