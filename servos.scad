@@ -57,7 +57,7 @@ function servoDimensions(model)=
  * @param number armAngle generates a servo arm, 180 is showing in servo-direction
  * @param number armlen the length of the servo arm
  */
-module servo(position=undef, rotation=undef, model, armAngle=undef, armlen=20){
+module servo(position=undef, rotation=undef, model, armAngle=undef, armLen=20){
     dim  = servoDimensions(model)[0];
     ear  = servoDimensions(model)[1];
     earZ = servoDimensions(model)[2];
@@ -70,13 +70,13 @@ module servo(position=undef, rotation=undef, model, armAngle=undef, armlen=20){
                     translate([-ear.x,(dim.y-ear.y)/2,earZ])
                         cube([dim.x+2*ear.x,ear.y,ear.z]);
                 }
-                translate([axis[0],dim.y/2,0]){
+                translate([axis[0],dim.y/2,.1]){
                     color("grey")cylinder(h=dim.z+2,d=10,$fn=30);
                     color("white")cylinder(h=axis[1],d=4,$fn=20);
                 }
             }
             if(armAngle!=undef){
-                translate([0,0,axis[1]])servoArm(armlen,armAngle);
+                translate([0,0,axis[1]])servoArm(armLen,armAngle);
             }
         }
     }
