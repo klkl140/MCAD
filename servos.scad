@@ -153,6 +153,7 @@ module servoArm(armLen,armAngle){
 }
 
 /**
+<<<<<<< HEAD
  * TowerPro SG90 servo
  *
  * @param vector position The position vector
@@ -196,6 +197,8 @@ module towerprosg90(position=undef, rotation=undef, screws = 0, axle_length = 0,
 }
 
 /**
+=======
+>>>>>>> parent of 117a3e7 (Added TowerPro SG90 Servo)
  * Align DS420 digital servo
  * https://servodatabase.com/servo/align/ds420#google_vignette
  *
